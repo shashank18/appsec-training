@@ -1,0 +1,286 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <title>A11 : XML External Entity (XXE) Processing</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.scrolly.min.js"></script>
+        <script src="js/skel.min.js"></script>
+        <script src="js/init.js"></script>
+        <noscript>
+            <link rel="stylesheet" href="css/skel.css" />
+            <link rel="stylesheet" href="css/style.css" />
+            <link rel="stylesheet" href="css/style-desktop.css" />
+        </noscript>
+       
+
+
+       <script type="text/javascript">
+        function XMLFunction(){
+        var xml = '' +
+        '<?xml version="1.0" encoding="UTF-8"?>' +
+        '<root>' +
+        '<email>' + $('#email').val() + '</email>' +
+        '<password>' + $('#password').val() + '</password>' +
+        '</root>';
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+        if(xmlhttp.readyState == 4){
+            console.log(xmlhttp.readyState);
+            console.log(xmlhttp.responseText);
+            document.getElementById('errorMessage').innerHTML = xmlhttp.responseText;
+
+        }
+    }
+    xmlhttp.open("POST","a11_xxe.php",true);
+    xmlhttp.send(xml);
+};
+      </script>
+
+
+
+
+<style type="text/css">
+/* Add whatever you need to your CSS reset */
+html, body, h1, form, fieldset, input {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body { font-family: Helvetica, Arial, sans-serif; font-size: 18px; }
+#registration {
+    color: #fff;
+    background: #2d2d2d;
+    background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, rgb(60,60,60)),
+    color-stop(0.74, rgb(43,43,43)),
+    color-stop(1, rgb(60,60,60))
+    );
+    background: -moz-linear-gradient(
+    center bottom,
+    rgb(60,60,60) 0%,
+    rgb(43,43,43) 74%,
+    rgb(60,60,60) 100%
+    );
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    width: 430px;
+}
+#registration a {
+    color: #8c910b;
+    text-shadow: 0px -1px 0px #000;
+}
+
+#registration fieldset {
+    padding: 20px;
+}
+
+input.text {
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    border:solid 1px #444;
+    font-size: 14px;
+    width: 90%;
+    padding: 7px 8px 7px 30px;
+    -moz-box-shadow: 0px 1px 0px #777;
+    -webkit-box-shadow: 0px 1px 0px #777;
+    background: #ddd url('img/inputSprite.png') no-repeat 4px 5px;
+    background: url('img/inputSprite.png') no-repeat 4px 5px,
+    -moz-linear-gradient(
+    center bottom,
+    rgb(225,225,225) 0%,
+    rgb(215,215,215) 54%,
+    rgb(173,173,173) 100%
+    );
+    background: url('img/inputSprite.png') no-repeat 4px 5px,
+    -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, rgb(225,225,225)),
+    color-stop(0.54, rgb(215,215,215)),
+    color-stop(1, rgb(173,173,173))
+    );
+    color:#333;
+    text-shadow:0px 1px 0px #FFF;
+}
+input#email {
+    background-position: 4px 5px;
+    background-position: 4px 5px, 0px 0px;
+}
+
+
+input#name {
+    background-position: 4px -46px;
+    background-position: 4px -46px, 0px 0px;
+}
+
+
+#registration h2 {
+    color: #fff;
+    text-shadow: 0px -1px 0px #000;
+    border-bottom: solid #181818 1px;
+    -moz-box-shadow: 0px 1px 0px #3a3a3a;
+    text-align: center;
+    padding: 18px;
+    margin: 0px;
+    font-weight: normal;
+    font-size: 24px;
+    font-family: Lucida Grande, Helvetica, Arial, sans-serif;
+}
+
+#errorMessage {
+    color: red;
+    font-style: italic;
+    font-size: 1.5 em;
+}
+#registerNew {
+    width: 203px;
+    height: 40px;
+    border: none;
+    text-indent: -9999px;
+    background: url('images/createAccountButton.png') no-repeat;
+    cursor: pointer;
+    float: center;
+}
+
+#registerNew:hover { background-position: 0px -41px; }
+#registerNew:active { background-position: 0px -82px; }
+
+#registration p {
+    position: relative;
+}
+
+fieldset label.infield /* .infield label added by JS */ {
+    color: #333;
+    text-shadow: 0px 1px 0px #fff;
+    position: absolute;
+    text-align: left;
+    top: 3px !important;
+    left: 35px !important;
+    line-height: 29px;
+}
+</style>
+
+
+
+    </head>
+    <body>
+
+        <!-- Nav -->
+            <nav id="nav">
+                <ul class="container">
+                    <img src="images/ninja.png" alt="" width="8.5%" height="8.5%" align="left" />
+                    <li><a href="a1.html">A1</a></li>
+                    <li><a href="a2.html">A2</a></li>
+                    <li><a href="a3.html">A3</a></li>
+                    <li><a href="a4.html">A4</a></li>
+                    <li><a href="a5.html">A5</a></li>
+                    <li><a href="a6.html">A6</a></li>
+                    <li><a href="a7.html">A7</a></li>
+                    <li><a href="a8.html">A8</a></li>
+                    <li><a href="a9.html">A9</a></li>
+                    <li><a href="a10.html">A10</a></li>
+                    <li><a href="a11.html">A11</a></li>
+                </ul>
+            </nav>
+            <div class="wrapper style2">
+                <article id="work">
+                    
+                        <h5>A11 : XML External Entity (XXE) Processing</h5>
+                    
+                    <div class="container">
+                    <center>
+   
+        <div id="registration">
+        <h2>Create an Account</h2>
+        <div id="RegisterUserForm">
+            <fieldset>
+                
+                <p>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" class="text"
+                value="" />
+                </p>
+                
+                <p>
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" class="text"
+                value="" />
+                </p>
+
+                <p><input id="acceptTerms" name="acceptTerms" type="checkbox"
+                />
+                <label for="acceptTerms">
+                    I agree to the <a href="">Terms and Conditions</a> and
+                    <a href="">Privacy Policy</a>
+                </label>
+                </p>
+
+                <p>
+                <button id="registerNew"
+                    onclick="XMLFunction()">Register</button>
+                </p>
+            </fieldset>
+        </div>
+    </div>
+    <div id="errorMessage" color="red">
+    </div>                 
+                   
+                </article>
+            </div>
+
+        
+        
+            <div class="wrapper style4">
+                <article id="contact" class="container small">
+                    <header>
+                
+                        <p>What kind of query is being generated at the back end??
+                        </p>
+                    </header>
+                    <div>
+						<div>
+						
+						<div class="row">
+							<div class="12u">
+							<ul>
+							<li><H5 style="cursor: pointer" onclick="toggleBlock(this, 'hint1');"> Hint 1 </H5>
+							<DIV id="hint1" style="display:none">
+							<P>
+							Look at the Source code
+							</P>
+							</DIV></li>
+
+							<li><H5 style="cursor: pointer" onclick="toggleBlock(this, 'solution');"> Solution </H5>
+							<DIV id="solution" style="display:none">
+							<P>
+							Intercept the request in Burp Suite and modify the XML data to add DOCTYPE header
+
+							</P>
+							</DIV>
+						   </li>
+							
+							</ul>
+							</div>
+						</div>
+					</div>
+                    <footer>
+                        <ul id="copyright">
+                        </ul>
+                    </footer>
+                </article>
+            </div>
+
+    </body>
+</html>
