@@ -1,9 +1,9 @@
-# AppSec_Training
-AppSec Training
+# AppSec Training
+AppSec Training for Instacart
 
 Slide deck link-> https://docs.google.com/presentation/d/18PuDwm0E6SP1rPUnOddDXcJ0g3HE93wbSCCd914iMQI/edit#slide=id.p1
 
-This hands-on training lab consists of 10 fun real world like hacking exercises. Hints and solutions are provided along the way. Although the backend for this is written in PHP, vulnerabilities would remain the same across all web based languages, so the training would still be relevant even if you don’t actively code in PHP. 
+This hands-on training lab consists of 11 fun real world like hacking exercises. Hints and solutions are provided along the way. Although the backend for this is written in PHP, vulnerabilities would remain the same across all web based languages, so the training would still be relevant even if you don’t actively code in PHP. 
 
 Making the Hands-on Lab Work:
 
@@ -23,7 +23,7 @@ Setup:
 2. Make sure docker has been installed correctly by running ‘docker version’.
 
 3. Start the Application Security Training container by running the following command (I chose port 8899 to avoid port allocation conflicts):
-    'docker run -d -p 8899:80 opendns/security-ninjas'
+    'docker run -d -p 8899:80 shashankmirji/appsec-training'
 
 4. Get the IP address of your container:
     In my case the command was ‘boot2docker ip’ as I was running docker using boot2docker
