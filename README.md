@@ -46,7 +46,7 @@ If for some reason you are not able to run the training in a docker container, y
 
 2. Download the source code from here and put it in the directory where the web server looks for files to serve.
 
-3. In the Security Ninjas sub-directory, change text file permissions - 'chmod 777 *.txt'
+3. In the src/Final directory, change text file permissions - 'chmod 777 *.txt'
 
 4. Make sure WHOIS is installed on the web server.
 
