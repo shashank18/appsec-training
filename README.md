@@ -23,7 +23,7 @@ Setup:
 2. Make sure docker has been installed correctly by running ‘docker version’.
 
 3. Start the Application Security Training container by running the following command (I chose port 8899 to avoid port allocation conflicts):
-    'docker run -d -p 8899:80 shashankmirji/appsec-training'
+    'docker run -d -p 8899:80 shashankmirji/appsec-training1'
 
 4. Get the IP address of your container:
     In my case the command was ‘boot2docker ip’ as I was running docker using boot2docker
