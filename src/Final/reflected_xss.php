@@ -78,7 +78,7 @@
 							<li><H5 style="cursor: pointer" onclick="toggleBlock(this, 'solution');"> Solution </H5>
 							<DIV id="solution" style="display:none">
 							<P>
-							Enter any malicious JavaScript code. e.g., &lt;script&gt;window.location.href = &quot;http://instacart.com&quot;;&lt;/script&gt;
+							Enter any malicious JavaScript code. e.g., &lt;script&gt;window.location.href = &quot;https://instacart.com&quot;;&lt;/script&gt;
 							</P>
 							
 							</DIV></li>
