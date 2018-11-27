@@ -36,6 +36,7 @@
 					<li><a href="a8.html">A8</a></li>
 					<li><a href="a9.html">A9</a></li>
 					<li><a href="a10.html">A10</a></li>
+					<li><a href="a11.html">A11</a></li>
 				</ul>
 			</nav>
 			<div class="wrapper style2">
