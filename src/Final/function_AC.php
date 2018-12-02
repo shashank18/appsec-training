@@ -37,6 +37,7 @@
 					<li><a href="a8.html">A8</a></li>
 					<li><a href="a9.html">A9</a></li>
 					<li><a href="a10.html">A10</a></li>
+					<li><a href="a11.html">A11</a></li>
 					
 				</ul>
 			</nav>
@@ -49,10 +50,11 @@
 							<?php
 							$operation = $_GET['operation'];
 							$is_admin = $_GET['is_admin'];
+ 							{
+										if($is_admin != 'true')
 
-							switch($operation){
-								case 'view':
-									{
+										{
+
 											$user_file = file_get_contents('management.txt');
 											$rows = explode("@#", $user_file);
 
@@ -77,24 +79,16 @@
 											$html .= '</table>';
 											 
 											echo $html;
+
+
+							        }
+
+									else
+									{
+										$html = '<h2>Welcome Admin</h2><img src="images/Admin_Panel" height=120% width=75% ><br>';	
+										echo $html;
+									}			
 									}
-									break;
-								case 'add':
-									if($is_admin != 'true')
-									{
-										echo "You need to be an admin for this operation";
-									}	
-									elseif($is_admin == 'true')
-									{
-										file_put_contents("management.txt", $_POST["name"]."#@".$_POST["description"]."@#", FILE_APPEND);
-										echo "Success!";
-										echo '<br><a href="function_AC.php?operation=view&is_admin=false">Instacart Leadership</a>';
-									}	
-
-									break;
-							}
-
-
 							?>				
 					</div>
 					
