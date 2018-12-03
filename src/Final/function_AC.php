@@ -85,7 +85,7 @@
 
 									else
 									{
-										$html = '<h2>Welcome Admin</h2><img src="images/Admin_Panel" height=120% width=75% ><br>';	
+										$html = '<h2>Welcome Admin</h2><img src="images/Admin_Panel.png" height=120% width=75% ><br>';	
 										echo $html;
 									}			
 									}
